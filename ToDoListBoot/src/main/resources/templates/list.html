@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>To do list List page</h2>
+
+<div  th:if="${errorMessage != null}">
+<p>${errorMessage}</p>
+</div>
+
+<div  th:if="!${#lists.isEmpty(tasks)}">
+<table>
+	<tr>
+		<th>Expiration Date</th>
+		<th>Description</th>
+		<th>To do?</th>
+	</tr>
+	<tr th:each="task : ${tasks}">
+		 <td><span th:text="${#calendars.format(task.expirationDate,'dd MMMM yyyy')}"/></td>
+		 <td><span th:text="${task.description}"/></td>
+		 <td><input type="checkbox" th:checked="${task.toDo}"/></td>
+	 </tr>
+</table>
+<input type="button" value="Add task" onClick="window.location='add'"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>To do list Add Page</h2>
+
+<form action="#" th:action="@{/add}" th:object="${formData}" method="post">
+    <label>Description</label> <input type="text" th:field="*{description}" /><span th:text="*{descriptionError}" /><br/>
+    <label>ExpirationDate</label> <input type="date" th:field="*{expirationDate}" /><span th:text="*{expirationDateError}" /><br/>
+    <input type="submit" value="Add"/>
+</form>
+
+</body>
+</html>
