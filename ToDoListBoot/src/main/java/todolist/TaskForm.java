@@ -13,6 +13,8 @@ public class TaskForm{
 	@NotNull
 	private Date expirationDate;
 	
+	private boolean todo;
+	
 	private String descriptionError;
 	
 	private String expirationDateError;
@@ -51,6 +53,14 @@ public class TaskForm{
 
 	public void setExpirationDateError(String expirationDateError) {
 		this.expirationDateError = expirationDateError;
+	}
+
+	public boolean getTodo() {
+		return todo;
+	}
+
+	public void setTodo(boolean todo) {
+		this.todo = todo;
 	}
 
 }

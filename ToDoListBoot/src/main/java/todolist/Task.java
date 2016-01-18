@@ -2,6 +2,7 @@ package todolist;
 
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,6 @@ public class Task {
 	@Column(name= "to_do")
 	private boolean toDo;
 
-	
 	protected Task() {}
 	
 	public Task(String description, Timestamp expirationDate, boolean toDo) {
@@ -70,4 +70,10 @@ public class Task {
 	public void setToDo(boolean toDo){
 		this.toDo = toDo;
 	}
+	
+	public boolean isExpired()
+	{
+		return this.getExpirationDate().before(Calendar.getInstance().getTime());
+	}
+
 }
